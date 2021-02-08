@@ -11,6 +11,11 @@ Please clone the repository and make sure you have the following libraries insta
 `pip install Flask` to install **Flask**. In case you have a problem installing Flask, Please visit https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask <br>
 `pip install flask-restful` to install **Flask-RESTful**. Visit https://flask-restful.readthedocs.io/en/latest/installation.html for help.
 
+Once the neccessary libraries are installed into the development environment,
+1. Please run main.py to start the Flask server and app to start running the app
+2. By default Flash runs on the local server at `localhost:5000` or ` http://127.0.0.1.5000` 
+3. Please visit Flask documentation to know how to update the Base URL for the server.
+
 
 Please pass parameters as a part of the URL.
 
