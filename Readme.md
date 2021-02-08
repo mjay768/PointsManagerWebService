@@ -3,11 +3,10 @@
 
 
 
-Please clone the repository and make sure you have the following libraries installed. If not, please read include guide on how to install Python libraries
+Please clone the repository and make sure you have the following libraries installed. If not, please read included guide on how to install Python libraries
 1. Flask v1.1.2
 2. Flask-RESTful 0.3.8
 3. Python requests library
-4. Python re (regular expressions library)
 
 #### How to install Python Libraries:
 `pip install requests` to install **requests** library<br>
