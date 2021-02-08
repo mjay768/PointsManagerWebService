@@ -1,4 +1,4 @@
-#Getting Started:
+# Getting Started:
 
 
 
@@ -9,7 +9,7 @@ Please clone the repository and make sure you have the following libraries insta
 3. Python requests library
 4. Python re (regular expressions library)
 
-####How to install Python Libraries:
+#### How to install Python Libraries:
 `pip install requests` to install **requests** library<br>
 `pip install Flask` to install **Flask**. In case you have a problem installing Flask, 
 Please visit https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask <br>
@@ -37,7 +37,7 @@ Parameters: points to be deducted
 
 **Response**: Returns number of points deducted from each Payer
 
-####POST
+#### POST
 `/<payer>/<points>/<date>`
 
 ###### Parameters
