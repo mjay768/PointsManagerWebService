@@ -10,8 +10,7 @@ Please clone the repository and make sure you have the following libraries insta
 
 #### How to install Python Libraries:
 `pip install requests` to install **requests** library<br>
-`pip install Flask` to install **Flask**. In case you have a problem installing Flask, 
-Please visit https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask <br>
+`pip install Flask` to install **Flask**. In case you have a problem installing Flask, Please visit https://flask.palletsprojects.com/en/1.1.x/installation/#install-flask <br>
 `pip install flask-restful` to install **Flask-RESTful**. Visit https://flask-restful.readthedocs.io/en/latest/installation.html for help.
 
 ##### GET
