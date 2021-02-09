@@ -100,42 +100,52 @@ class PointsManager(Resource):
 
                 # Proceed if points to deduct is greater than the transaction points
                 if pts_deduct >= tr_points:
+
+                    # If the transaction points are between zero and actual points balance
                     if tr_points >= 0 and tr_points <= temp_user_points[tr_payee]:
                         pts_deduct -= tr_points
                         deduct_track[tr_payee] -= tr_points
                         temp_user_points[tr_payee] -= tr_points
 
-
+                    # If the points are negative and Actual points are less than or equal to zero
                     elif tr_points < 0 and temp_user_points[tr_payee] <= 0:
                         continue
 
-
+                    # If the transactions are negative and Actual points are positive
                     elif tr_points < 0 and temp_user_points[tr_payee] > 0:
                         diff = deduct_track[tr_payee] - tr_points
                         deduct_track[tr_payee] = diff
                         pts_deduct += abs(tr_points)
                         temp_user_points[tr_payee] += abs(tr_points)
 
-
+                    # If the transaction points are positive & greater than the Actual points,
+                    # and the Actual points are not zero
                     elif tr_points > 0 and tr_points > temp_user_points[tr_payee] and temp_user_points[tr_payee] != 0:
                         pts_deduct -= temp_user_points[tr_payee]
                         deduct_track[tr_payee] -= temp_user_points[tr_payee]
                         temp_user_points[tr_payee] = 0
 
+                    # If the transaction points are positive and Actual user points are zero
                     elif tr_points > 0 and temp_user_points[tr_payee] == 0:
                         continue
-
+                # If the points to be deducted are less than transaction points
                 elif pts_deduct < tr_points:
+
+                    #If the points to be deducted are less than Actual points
                     if pts_deduct < temp_user_points[tr_payee]:
                         deduct_track[tr_payee] -= pts_deduct
                         temp_user_points[tr_payee] -= pts_deduct
                         pts_deduct = 0
+
+                    # If the points to be deducted are greater than Actual user points
                     elif pts_deduct > temp_user_points[tr_payee]:
                         pts_deduct -= temp_user_points[tr_payee]
                         temp_user_points[tr_payee] = 0
 
         print("Points to deduct: ", pts_deduct)
         print("User data: ", user_data)
+        # Update balance if points are positive, which means there are points left after deducting
+        # from all the transactions
         if pts_deduct > 0:
             updateBalance(temp_user_points)
         return deduct_track
